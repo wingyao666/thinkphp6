@@ -15,6 +15,9 @@ php think run -H api.tp6.com
 ##创建控制器
 php think make:controller User --api
 
+##返回数据格式
+return Response::create([1,2,3],'json')
+
 
 ## 主要新特性
 

@@ -15,3 +15,6 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
+
+//TODO api路口配置
+Route::resource('user','user');

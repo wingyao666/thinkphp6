@@ -6,7 +6,7 @@ namespace app\controller;
 use think\Request;
 use app\model\UserModel;
 
-class User
+class User extends Base
 {
     /**
      * 显示资源列表
@@ -15,7 +15,7 @@ class User
      */
     public function index()
     {
-        return UserModel::limit(5)->select();
+        return $this->create(UserModel::limit(5)->select(),'获取成功');
     }
 
     /**
@@ -38,6 +38,7 @@ class User
     public function read($id)
     {
         //
+        return $id;
     }
 
     /**
