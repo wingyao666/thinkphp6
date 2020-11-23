@@ -12,8 +12,6 @@ class Index extends BaseController
 
     public function hello($name = 'ThinkPHP6')
     {
-
-        return 1111111;
         return 'hello,' . $name;
     }
 }

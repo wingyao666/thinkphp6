@@ -3,15 +3,15 @@ namespace app\controller;
 
 use app\BaseController;
 
-class Event extends BaseController
+class User extends BaseController
 {
     public function index()
     {
-        return 66666;
+        return 'user index';
     }
 
     public function hello($name = 'ThinkPHP6')
     {
-
+        return 'hello,' . $name;
     }
 }
