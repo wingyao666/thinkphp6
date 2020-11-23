@@ -4,9 +4,8 @@ declare (strict_types = 1);
 namespace app\controller;
 
 use think\Request;
-use app\model\UserModel;
 
-class User
+class Test
 {
     /**
      * 显示资源列表
@@ -15,7 +14,7 @@ class User
      */
     public function index()
     {
-        return UserModel::limit(5)->select();
+        //
     }
 
     /**

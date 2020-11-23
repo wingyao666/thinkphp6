@@ -7,6 +7,15 @@ ThinkPHP 6.0
 
 ThinkPHPV6.0版本由[亿速云](https://www.yisu.com/)独家赞助发布。
 
+
+##启动服务
+
+php think run -H api.tp6.com
+
+##创建控制器
+php think make:controller User --api
+
+
 ## 主要新特性
 
 * 采用`PHP7`强类型（严格模式）
@@ -54,3 +63,4 @@ All rights reserved。
 ThinkPHP® 商标和著作权所有者为上海顶想信息科技有限公司。
 
 更多细节参阅 [LICENSE.txt](LICENSE.txt)
+
