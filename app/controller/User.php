@@ -3,8 +3,11 @@ declare (strict_types = 1);
 
 namespace app\controller;
 
+use think\exception\ValidateException;
+use think\facade\Validate;
 use think\Request;
 use app\model\UserModel;
+use app\validate\UserValidate;
 
 class User extends Base
 {
@@ -15,7 +18,8 @@ class User extends Base
      */
     public function index()
     {
-        return $this->create(UserModel::limit(5)->select(),'获取成功');
+
+        return $this->create(UserModel::limit(5)->page($this->page)->paginate($this->pageSize),'获取成功');
     }
 
     /**
@@ -26,7 +30,13 @@ class User extends Base
      */
     public function save(Request $request)
     {
-        //
+        $data = $request->param();
+        try{
+            \validate(UserValidate::class)->check($data);
+            return $this->create([],'修改成功',200);
+        }catch (ValidateException $exception){
+            return $this->create([],$exception->getError(),404);
+        }
     }
 
     /**
@@ -37,8 +47,15 @@ class User extends Base
      */
     public function read($id)
     {
-        //
-        return $id;
+        if (!Validate::isInteger($id)){
+            return $this->create([],'id参数不合法',404);
+        }
+        $data = UserModel::find($id);
+        if (empty($data)){
+            return $this->create([],'无数据',204);
+        }else{
+            return $this->create($data,'数据请求成功',200);
+        }
     }
 
     /**

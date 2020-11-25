@@ -17,4 +17,6 @@ Route::get('think', function () {
 Route::get('hello/:name', 'index/hello');
 
 //TODO api路口配置
-Route::resource('user','user');
+Route::resource('user','User');
+
+Route::post('user','User/save');

@@ -18,6 +18,12 @@ php think make:controller User --api
 ##返回数据格式
 return Response::create([1,2,3],'json')
 
+##安装模板引擎
+composer topthink/think-view
+
+##新建验证器验证数据
+php think make:validate User
+
 
 ## 主要新特性
 
