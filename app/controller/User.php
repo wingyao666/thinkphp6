@@ -80,4 +80,10 @@ class User extends Base
     {
         //
     }
+
+    public function login(Request $request){
+
+
+        return 11111;
+    }
 }

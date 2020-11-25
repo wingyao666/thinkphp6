@@ -20,3 +20,5 @@ Route::get('hello/:name', 'index/hello');
 Route::resource('user','User');
 
 Route::post('user','User/save');
+
+Route::post('login','User/login');
